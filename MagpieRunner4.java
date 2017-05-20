@@ -21,17 +21,21 @@ public class MagpieRunner4
         double r = Double.parseDouble(in.nextLine());
         System.out.println("Insert value for angle:");
         double o = Double.parseDouble(in.nextLine());
+        double result = o * Math.PI/180;
         System.out.println("Insert value for coefficient of friction");
         double u = Double.parseDouble(in.nextLine());
+        System.out.println("Insert value for acceleration of gravity");
+        double g = Double.parseDouble(in.nextLine());
         String statement = in.nextLine();
         in.close();
 
-        double v = (Math.sqrt((r * 9.8 * Math.sin(o)) + (r * 9.8 * u * Math.cos(o)) / (Math.cos(o) - u * Math.sin(o))));
+        double v = Math.sqrt(r * g * Math.sin(result) + r * g * u * Math.cos(result) / (Math.cos(result) - u * Math.sin(result)));
+        double vf = v * 3600 / 5280;
 
-        if (Double.isNaN(v))
+        if (Double.isNaN(vf))
         {
             System.out.println("Impossible");
-        } else System.out.println("The maximum safe velocity is: " + v);
+        } else System.out.println("The maximum safe velocity is: " + vf + " mi/hr");
 
 		
         //while (!statement.equals("Terminate"))
