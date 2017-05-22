@@ -21,7 +21,7 @@ public class MagpieRunner4
         double r = Double.parseDouble(in.nextLine());
         System.out.println("Insert value for angle:");
         double o = Double.parseDouble(in.nextLine());
-        double result = o * Math.PI/180;
+        double result = Math.sin(o*Math.PI/180);
         System.out.println("Insert value for coefficient of friction");
         double u = Double.parseDouble(in.nextLine());
         System.out.println("Insert value for acceleration of gravity");
